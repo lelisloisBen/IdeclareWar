@@ -4,7 +4,7 @@
   "description": "war card game",
   "main": "index.html",
   "dependencies": {
-    "python3": "^0.0.1"
+    "python3": "0.0.1"
   },
   "devDependencies": {},
   "scripts": {

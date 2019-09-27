@@ -1,0 +1,23 @@
+{
+  "name": "ideclarewar",
+  "version": "1.0.0",
+  "description": "war card game",
+  "main": "index.html",
+  "dependencies": {
+    "python3": "^0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samirbenzada/IdeclareWar.git"
+  },
+  "author": "Samir Benzada & Ryan McLean",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samirbenzada/IdeclareWar/issues"
+  },
+  "homepage": "https://github.com/samirbenzada/IdeclareWar#readme"
+}

@@ -1,13 +1,39 @@
 .firstCard {
     margin: 0 auto;
+    background-color:grey
 }
 
 .myCard {
     width: 200px;
     height: 300px;
-    background-color: blue;
+    background-color: lightblue;
     border-radius: 10px;
     margin-bottom: 20px;
-    font-size: 50px;
+    margin-top: 20px;
+    /* font-size: 50px; */
     padding-top: 20%;
+}
+
+.firstHeart {
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    font-size: 250%;
+    color: blue;
+}
+.secondHeart {
+    position: absolute;
+    bottom: 30px;
+    right: 60px;
+    transform: scale(1,-1);
+    font-size: 250%;
+    color: blue;
+
+}
+
+.centerFont{
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    font-size: 300%;
 }

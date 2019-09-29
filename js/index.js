@@ -1,6 +1,69 @@
-function randomFlip(){
-    document.querySelector("#vegasDeck").innerHTML= Math.floor(Math.random()* 10)
+function randomFlip(elem){
+
+    if (elem.id === 'btnPlayer1') {
+        let random1 = Math.floor(Math.random() * (14 - 2 + 1) + 2);
+            if (random1 === 11) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/jack.png" width="100px" />`;
+        } else if (random1 === 12) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/queen.png" width="100px" />`;
+        } else if (random1 === 13) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/king.jpg" width="100px" />`;
+        } else if (random1 === 14) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/ace.jpg" width="100px" />`;
+        } else {
+            document.body.querySelector('#vegasDeck').innerHTML = random1;
+        }
+        document.body.querySelector('#btnPlayer1').disabled = true;
+        document.body.querySelector('#btnPlayer1').style.backgroundColor = "black";
+        document.body.querySelector('#p1').dataset.result = random1;
+        
+
+    } else if (elem.id === 'btnPlayer2') {
+        let random = Math.floor(Math.random() * (14 - 2 + 1) + 2);
+        if (random === 11) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/jack.png" width="100px" />`;
+        } else if (random === 12) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/queen.png" width="100px" />`;
+        } else if (random === 13) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/king.jpg" width="100px" />`;
+        } else if (random === 14) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/ace.jpg" width="100px" />`;
+        } else {
+            document.body.querySelector('#renoDeck').innerHTML = random;
+        }
+        document.body.querySelector('#btnPlayer2').disabled = true;
+        document.body.querySelector('#btnPlayer2').style.backgroundColor = "black";
+        document.body.querySelector('#p2').dataset.result = random;
+    }
+
+    let res1 = document.body.querySelector('#p1').dataset.result;
+    let res2 = document.body.querySelector('#p2').dataset.result;
+
+    if (res1 === '' || res2 === '') {
+        document.body.querySelector('#gameResult').innerHTML = "GAME IN PROGRESS";
+    } else {
+        document.body.querySelector('#gameResult').innerHTML = res1 + " - " + res2;
+        if (Number(res1) > Number(res2)) {
+            document.body.querySelector('#gameResult').innerHTML = "PLAYER 1 WIN";
+        } else if (Number(res1) < Number(res2)) {
+            document.body.querySelector('#gameResult').innerHTML = "PLAYER 2 WIN";
+        } else if (Number(res1) === Number(res2)) {
+            document.body.querySelector('#gameResult').innerHTML = "EVEN";
+        }
+    }
+
+    
+    
 }
-function randomFlip2(){
-    document.querySelector("#renoDeck").innerHTML= Math.floor(Math.random()* 10)
+
+
+
+function reset() {
+    document.body.querySelector('#btnPlayer1').disabled = false;
+    document.body.querySelector('#btnPlayer2').disabled = false; 
+    document.body.querySelector('#btnPlayer1').style.backgroundColor = "";
+    document.body.querySelector('#btnPlayer2').style.backgroundColor = "";
+    document.body.querySelector('#p1').dataset.result = "";
+    document.body.querySelector('#p2').dataset.result = "";
+    document.body.querySelector('#gameResult').innerHTML = "PLAY";
 }

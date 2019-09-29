@@ -14,69 +14,71 @@
 
 <div class="container">
 
-    <div class="alert alert-primary" role="alert">
-        <h3 class="text-center">BATAILLE</h3>
-    </div>
+  <div class="alert alert-primary" role="alert">
+      <h3 class="text-center">BATAILLE</h3>
+  </div>
     
-
-
-  <div class="row">
-    <div class="col text-center">Player-1</div >    
-    <div class="col text-center">V/S</div >
-    <div class="col text-center">Player-2</div >    
-  </div> 
-
-  <br><br>
 
   <div class="row">
     <div class="col">
-      <button onclick="randomFlip()" type="button" class="btn btn-outline-primary form-control mb-3">Primary</button>
+      <button id="btnPlayer1" onclick="randomFlip(this)" type="button" class="btn btn-primary form-control mb-3">PLAYER 1</button>
     </div>    
    
     <div class="col">
-      <button onclick="randomFlip2()" type="button" class="btn btn-outline-primary form-control mb-3">Primary</button>
+      <button id="btnPlayer2" onclick="randomFlip(this)" type="button" class="btn btn-primary form-control mb-3">PLAYER 2</button>
     </div >    
   </div> 
 
 
-  <div class="row">
-    <div class="col firstCard">
-        
-        
-        <div class="myCard mx-auto text-center">
-            <div><i class="fas fa-heart firstHeart"></i></div>
-            
-            <div><h1 class="centerFont" id="vegasDeck">5</h1></div>
-            
-            <div><i class="fas fa-heart secondHeart"></i></div>
 
+<div class="row">
+<!-- Start Left Card -->
+    <div class="col firstCard">
+        <div class="myCard mx-auto">
+            <div class="firstHeart">
+              <i class="fas fa-heart "></i>
+            </div>
+            <div class="centerFont" id="vegasDeck">
+                5
+            </div>
+            <div>
+              <i class="fas fa-heart secondHeart"></i>
+            </div>
         </div>
-
-      
     </div >
-
-
-    <i class="fas fa-spade"></i>
+<!-- End Left Card -->
+<!-- Start Right Card -->
     <div class="col firstCard">
-        
+        <div class="myCard mx-auto">
+            <div class="firstHeart">
+              <i class="fas fa-heart "></i>
+            </div>
+            <div class="centerFont" id="renoDeck">
+                5
+            </div>
+            <div>
+              <i class="fas fa-heart secondHeart"></i>
+            </div>
+        </div>
+    </div > 
+<!-- End Right Card -->
+</div>
 
-        <div class="myCard mx-auto text-center">
-            <h1 id="renoDeck">5</h1>
-          </div>
-
-
-  </div> 
-
-
-  <div class="row">
+  <div class="row mt-4 mb-4">
     <div class="col">
 
-      <div class="card mb-3">
-        <img src="..." class="card-img-top" alt="...">
+      <div class="card ">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <div d="resultat" class="card-title text-center">
+            <span data-result="" id="p1"></span>
+            <span data-result="" id="p2"></span>
+            <!-- <span id="gameResult">RESULT</span> -->
+            <div id="gameResult" class="alert alert-primary">
+                RESULT
+            </div>
+          </div>
+          <!-- <h5 id="resultat" class="card-title text-center">RESULT</h5> -->
+          <p class="card-text text-center"><button onclick="reset()" class="btn btn-success">RESET</button></p>
         </div>
       </div> 
 

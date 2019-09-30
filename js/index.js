@@ -38,10 +38,11 @@ function randomFlip(elem){
         document.body.querySelector('#btnPlayer1').disabled = true;
         document.body.querySelector('#btnPlayer1').style.backgroundColor = "black";
         document.body.querySelector('#p1').dataset.result = random1;
+        document.body.querySelector('#cardLeft').style.background = "";
+        document.body.querySelector('#cardLeft').style.backgroundColor = "white";
         
         let suitsArray = ["images/cards/heart.png" , "images/cards/club.png" , "images/cards/diamond.png" , "images/cards/spade.png" ]
         let randomSuit = Math.floor(Math.random()* 4);
-        console.log(suitsArray[randomSuit]);
         document.querySelector("#suitcardChange0").src = suitsArray[randomSuit];
         document.querySelector("#suitcardChange1").src = suitsArray[randomSuit];
 
@@ -79,6 +80,8 @@ function randomFlip(elem){
         document.body.querySelector('#btnPlayer2').disabled = true;
         document.body.querySelector('#btnPlayer2').style.backgroundColor = "black";
         document.body.querySelector('#p2').dataset.result = random;
+        document.body.querySelector('#cardRight').style.background = "";
+        document.body.querySelector('#cardRight').style.backgroundColor = "white";
         
         let suitsArray = ["images/cards/heart.png" , "images/cards/club.png" , "images/cards/diamond.png" , "images/cards/spade.png" ]
         let randomSuit = Math.floor(Math.random()* 4);
@@ -117,6 +120,16 @@ function reset() {
     document.body.querySelector('#p1').dataset.result = "";
     document.body.querySelector('#p2').dataset.result = "";
     document.body.querySelector('#gameResult').innerHTML = "PLAY";
+    document.body.querySelector('#cardLeft').style.background = "url(images/cards/back.png) no-repeat center center / cover";
+    document.body.querySelector('#cardLeft').style.backgroundColor = "none";
+    document.body.querySelector('#cardRight').style.background = "url(images/cards/back.png) no-repeat center center / cover";
+    document.body.querySelector('#cardRight').style.backgroundColor = "none";
+    document.body.querySelector('#suitcardChange0').src = '';
+    document.body.querySelector('#suitcardChange1').src = '';
+    document.body.querySelector('#suitcardChange2').src = '';
+    document.body.querySelector('#suitcardChange3').src = '';
+    document.body.querySelector('#vegasDeck').innerHTML = '';
+    document.body.querySelector('#renoDeck').innerHTML = '';
 }
 
 

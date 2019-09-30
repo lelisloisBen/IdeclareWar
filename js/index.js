@@ -87,6 +87,9 @@ function randomFlip(elem){
     let res1 = document.body.querySelector('#p1').dataset.result;
     let res2 = document.body.querySelector('#p2').dataset.result;
     let listClass = 'class="list-group-item list-group-item-danger mb-2"';
+    let redText = `style="color: red; font-weight:bold;"`;
+    let evevLeftCard = `<div class="evenLeftCard1"></div><div class="evenLeftCard2"></div><div class="evenLeftCard3"></div>`;
+    let evevRightCard = `<div class="evenRightCard1"></div><div class="evenRightCard2"></div><div class="evenRightCard3"></div>`;
 
     if (res1 === '' || res2 === '') {
         document.body.querySelector('#gameResult').innerHTML = "GAME IN PROGRESS";
@@ -95,15 +98,17 @@ function randomFlip(elem){
         if (Number(res1) > Number(res2)) {
             roundNumber++;
             document.body.querySelector('#gameResult').innerHTML = "PLAYER 1 WIN";
-            document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} PLAYER 1 WON </li>`;
+            document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} = <span ${redText}>PLAYER 1 WON</span></li>`;
         } else if (Number(res1) < Number(res2)) {
             roundNumber++;
             document.body.querySelector('#gameResult').innerHTML = "PLAYER 2 WIN";
-            document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} PLAYER 2 WON </li>`;
+            document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} = <span ${redText}>PLAYER 2 WON</span></li>`;
         } else if (Number(res1) === Number(res2)) {
             roundNumber++;
             document.body.querySelector('#gameResult').innerHTML = "EVEN";
-            document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} EVEN </li>`;
+            document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} = <span ${redText}>EVEN</span></li>`;
+            document.body.querySelector('#firstEven').innerHTML = evevLeftCard;
+            document.body.querySelector('#secondEven').innerHTML = evevRightCard;
         }
     }  
 }

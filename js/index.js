@@ -11,9 +11,9 @@ function randomFlip(elem){
         } else if (random1 === 12) {
             document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/queen.png" width="100px" />`;
         } else if (random1 === 13) {
-            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/king.jpg" width="100px" />`;
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/king.png" width="100px" />`;
         } else if (random1 === 14) {
-            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/ace.jpg" width="100px" />`;
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/ace.png" width="100px" />`;
         } else if (random1 === 2) {
             document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/2.png" width="100px" />`;
         } else if (random1 === 3) {
@@ -38,9 +38,7 @@ function randomFlip(elem){
         document.body.querySelector('#btnPlayer1').disabled = true;
         document.body.querySelector('#btnPlayer1').style.backgroundColor = "black";
         document.body.querySelector('#p1').dataset.result = random1;
-        document.body.querySelector('#cardLeft').style.background = "";
-        document.body.querySelector('#cardLeft').style.backgroundColor = "white";
-        
+        document.body.querySelector('#cardLeft').className = "myCard mx-auto frontCard";
         let suitsArray = ["images/cards/heart.png" , "images/cards/club.png" , "images/cards/diamond.png" , "images/cards/spade.png" ]
         let randomSuit = Math.floor(Math.random()* 4);
         document.querySelector("#suitcardChange0").src = suitsArray[randomSuit];
@@ -53,9 +51,9 @@ function randomFlip(elem){
         } else if (random === 12) {
             document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/queen.png" width="100px" />`;
         } else if (random === 13) {
-            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/king.jpg" width="100px" />`;
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/king.png" width="100px" />`;
         } else if (random === 14) {
-            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/ace.jpg" width="100px" />`;
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/ace.png" width="100px" />`;
         } else if (random === 2) {
             document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/2.png" width="100px" />`;
         } else if (random === 3) {
@@ -80,8 +78,8 @@ function randomFlip(elem){
         document.body.querySelector('#btnPlayer2').disabled = true;
         document.body.querySelector('#btnPlayer2').style.backgroundColor = "black";
         document.body.querySelector('#p2').dataset.result = random;
-        document.body.querySelector('#cardRight').style.background = "";
-        document.body.querySelector('#cardRight').style.backgroundColor = "white";
+        document.body.querySelector('#cardRight').className = "myCard mx-auto frontCard";
+        
         
         let suitsArray = ["images/cards/heart.png" , "images/cards/club.png" , "images/cards/diamond.png" , "images/cards/spade.png" ]
         let randomSuit = Math.floor(Math.random()* 4);
@@ -104,15 +102,12 @@ function randomFlip(elem){
         } else if (Number(res1) === Number(res2)) {
             document.body.querySelector('#gameResult').innerHTML = "EVEN";
         }
-    }
-
-    
-    
+    }  
 }
 
 
-
 function reset() {
+    
     document.body.querySelector('#btnPlayer1').disabled = false;
     document.body.querySelector('#btnPlayer2').disabled = false; 
     document.body.querySelector('#btnPlayer1').style.backgroundColor = "";
@@ -120,10 +115,8 @@ function reset() {
     document.body.querySelector('#p1').dataset.result = "";
     document.body.querySelector('#p2').dataset.result = "";
     document.body.querySelector('#gameResult').innerHTML = "PLAY";
-    document.body.querySelector('#cardLeft').style.background = "url(images/cards/back.png) no-repeat center center / cover";
-    document.body.querySelector('#cardLeft').style.backgroundColor = "none";
-    document.body.querySelector('#cardRight').style.background = "url(images/cards/back.png) no-repeat center center / cover";
-    document.body.querySelector('#cardRight').style.backgroundColor = "none";
+    document.body.querySelector('#cardLeft').className = "myCard mx-auto backCard";
+    document.body.querySelector('#cardRight').className = "myCard mx-auto backCard";
     document.body.querySelector('#suitcardChange0').src = '';
     document.body.querySelector('#suitcardChange1').src = '';
     document.body.querySelector('#suitcardChange2').src = '';
@@ -131,5 +124,3 @@ function reset() {
     document.body.querySelector('#vegasDeck').innerHTML = '';
     document.body.querySelector('#renoDeck').innerHTML = '';
 }
-
-

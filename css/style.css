@@ -36,5 +36,6 @@ body {
     position: relative;
     top: 90px;
     left: 50px;
-    font-size: 50px;
+    font-size: 80px;
+    font-family: 'Oleo Script', cursive;
 }

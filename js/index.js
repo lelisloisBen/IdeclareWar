@@ -1,4 +1,8 @@
 function randomFlip(elem){
+    
+    
+
+
 
     if (elem.id === 'btnPlayer1') {
         let random1 = Math.floor(Math.random() * (14 - 2 + 1) + 2);
@@ -17,6 +21,11 @@ function randomFlip(elem){
         document.body.querySelector('#btnPlayer1').style.backgroundColor = "black";
         document.body.querySelector('#p1').dataset.result = random1;
         
+        let suitsArray = ["images/cards/heart.png" , "images/cards/club.png" , "images/cards/diamond.png" , "images/cards/spade.png" ]
+        let randomSuit = Math.floor(Math.random()* 4);
+        console.log(suitsArray[randomSuit]);
+        document.querySelector("#suitcardChange0").src = suitsArray[randomSuit];
+        document.querySelector("#suitcardChange1").src = suitsArray[randomSuit];
 
     } else if (elem.id === 'btnPlayer2') {
         let random = Math.floor(Math.random() * (14 - 2 + 1) + 2);
@@ -34,6 +43,12 @@ function randomFlip(elem){
         document.body.querySelector('#btnPlayer2').disabled = true;
         document.body.querySelector('#btnPlayer2').style.backgroundColor = "black";
         document.body.querySelector('#p2').dataset.result = random;
+        
+        let suitsArray = ["images/cards/heart.png" , "images/cards/club.png" , "images/cards/diamond.png" , "images/cards/spade.png" ]
+        let randomSuit = Math.floor(Math.random()* 4);
+        console.log(suitsArray[randomSuit]);
+        document.querySelector("#suitcardChange2").src = suitsArray[randomSuit];
+        document.querySelector("#suitcardChange3").src = suitsArray[randomSuit];
     }
 
     let res1 = document.body.querySelector('#p1').dataset.result;
@@ -67,3 +82,5 @@ function reset() {
     document.body.querySelector('#p2').dataset.result = "";
     document.body.querySelector('#gameResult').innerHTML = "PLAY";
 }
+
+

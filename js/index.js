@@ -14,8 +14,26 @@ function randomFlip(elem){
             document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/king.jpg" width="100px" />`;
         } else if (random1 === 14) {
             document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/ace.jpg" width="100px" />`;
+        } else if (random1 === 2) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/2.png" width="100px" />`;
+        } else if (random1 === 3) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/3.png" width="100px" />`;
+        } else if (random1 === 4) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/4.png" width="100px" />`;
+        } else if (random1 === 5) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/5.png" width="100px" />`;
+        } else if (random1 === 6) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/6.png" width="100px" />`;
+        } else if (random1 === 7) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/7.png" width="100px" />`;
+        } else if (random1 === 8) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/8.png" width="100px" />`;
+        } else if (random1 === 9) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/9.png" width="100px" />`;
+        } else if (random1 === 10) {
+            document.body.querySelector('#vegasDeck').innerHTML = `<img src="images/cards/10.png" width="100px" />`;
         } else {
-            document.body.querySelector('#vegasDeck').innerHTML = random1;
+            document.body.querySelector('#vegasDeck').innerHTML = '';
         }
         document.body.querySelector('#btnPlayer1').disabled = true;
         document.body.querySelector('#btnPlayer1').style.backgroundColor = "black";
@@ -37,8 +55,26 @@ function randomFlip(elem){
             document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/king.jpg" width="100px" />`;
         } else if (random === 14) {
             document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/ace.jpg" width="100px" />`;
+        } else if (random === 2) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/2.png" width="100px" />`;
+        } else if (random === 3) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/3.png" width="100px" />`;
+        } else if (random === 4) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/4.png" width="100px" />`;
+        } else if (random === 5) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/5.png" width="100px" />`;
+        } else if (random === 6) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/6.png" width="100px" />`;
+        } else if (random === 7) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/7.png" width="100px" />`;
+        } else if (random === 8) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/8.png" width="100px" />`;
+        } else if (random === 9) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/9.png" width="100px" />`;
+        } else if (random === 10) {
+            document.body.querySelector('#renoDeck').innerHTML = `<img src="images/cards/10.png" width="100px" />`;
         } else {
-            document.body.querySelector('#renoDeck').innerHTML = random;
+            document.body.querySelector('#renoDeck').innerHTML = '';
         }
         document.body.querySelector('#btnPlayer2').disabled = true;
         document.body.querySelector('#btnPlayer2').style.backgroundColor = "black";

@@ -23,8 +23,10 @@
   <div class="row">
     <div class="col">
       <button id="btnPlayer1" onclick="randomFlip(this)" type="button" class="btn btn-primary form-control mb-3">PLAYER 1</button>
-    </div>    
-   
+    </div>  
+    <div class="col-2">
+      <button onclick="reset()" class="btn btn-success form-control">RESET</button>
+    </div>  
     <div class="col">
       <button id="btnPlayer2" onclick="randomFlip(this)" type="button" class="btn btn-primary form-control mb-3">PLAYER 2</button>
     </div >    
@@ -74,8 +76,9 @@
                 RESULT
             </div>
           </div>
-          <!-- <h5 id="resultat" class="card-title text-center">RESULT</h5> -->
-          <p class="card-text text-center"><button onclick="reset()" class="btn btn-success">RESET</button></p>
+          <div class="col" style="width: 100%;">
+            <ul id="rounds" class="list-group"></ul>
+          </div>
         </div>
       </div> 
 

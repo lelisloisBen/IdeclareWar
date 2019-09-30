@@ -1,9 +1,6 @@
+let roundNumber = 0;
 function randomFlip(elem){
     
-    
-
-
-
     if (elem.id === 'btnPlayer1') {
         let random1 = Math.floor(Math.random() * (14 - 2 + 1) + 2);
             if (random1 === 11) {
@@ -83,24 +80,30 @@ function randomFlip(elem){
         
         let suitsArray = ["images/cards/heart.png" , "images/cards/club.png" , "images/cards/diamond.png" , "images/cards/spade.png" ]
         let randomSuit = Math.floor(Math.random()* 4);
-        console.log(suitsArray[randomSuit]);
         document.querySelector("#suitcardChange2").src = suitsArray[randomSuit];
         document.querySelector("#suitcardChange3").src = suitsArray[randomSuit];
     }
 
     let res1 = document.body.querySelector('#p1').dataset.result;
     let res2 = document.body.querySelector('#p2').dataset.result;
+    let listClass = 'class="list-group-item list-group-item-danger mb-2"';
 
     if (res1 === '' || res2 === '') {
         document.body.querySelector('#gameResult').innerHTML = "GAME IN PROGRESS";
     } else {
         document.body.querySelector('#gameResult').innerHTML = res1 + " - " + res2;
         if (Number(res1) > Number(res2)) {
+            roundNumber++;
             document.body.querySelector('#gameResult').innerHTML = "PLAYER 1 WIN";
+            document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} PLAYER 1 WON </li>`;
         } else if (Number(res1) < Number(res2)) {
+            roundNumber++;
             document.body.querySelector('#gameResult').innerHTML = "PLAYER 2 WIN";
+            document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} PLAYER 2 WON </li>`;
         } else if (Number(res1) === Number(res2)) {
+            roundNumber++;
             document.body.querySelector('#gameResult').innerHTML = "EVEN";
+            document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} EVEN </li>`;
         }
     }  
 }

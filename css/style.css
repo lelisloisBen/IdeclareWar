@@ -4,7 +4,6 @@ body {
 .firstCard {
     margin: 0 auto;
 }
-
 .myCard {
     position: relative;
     width: 200px;
@@ -15,7 +14,6 @@ body {
     transition: transform 1s;
     transform-style: preserve-3d;
 }
-
 .firstHeart {
     position: absolute; 
     left: 10px; 
@@ -33,7 +31,6 @@ body {
     color: red;
 
 }
-
 .centerFont{
     position: relative;
     top: 80px;
@@ -54,7 +51,7 @@ body {
     transform: rotateY(360deg);
 }
 
-.evenLeftCard1 {
+.evenCard1 {
     position: relative;
     width: 80px;
     height: 150px;
@@ -62,7 +59,7 @@ body {
     border-radius: 10px;
     border: 1px solid white;
 }
-.evenLeftCard2 {
+.evenCard2 {
     position: relative;
     top: -10px;
     left: -40px;
@@ -73,7 +70,7 @@ body {
     border-radius: 10px;
     border: 1px solid white;
 }
-.evenLeftCard3 {
+.evenCard3 {
     position: relative;
     top: -20px;
     left: -80px;
@@ -85,35 +82,37 @@ body {
     border: 1px solid white;
 }
 
-.evenRightCard1 {
+.warCard {
     position: relative;
-    left: 160px;
+    top: 0px;
+    left: 0px;
     width: 80px;
     height: 150px;
-    background: url("../images/cards/back.png") no-repeat center center / cover;
+    background: white;
     border-radius: 10px;
-    border: 1px solid white;
-}
-.evenRightCard2 {
-    position: relative;
-    top: -10px;
-    left: 40px;
-    z-index: 1;
-    width: 80px;
-    height: 150px;
-    background: url("../images/cards/back.png") no-repeat center center / cover;
-    border-radius: 10px;
-    border: 1px solid white;
-}
-.evenRightCard3 {
-    position: relative;
-    top: -20px;
-    left: -80px;
-    z-index: 2;
-    width: 80px;
-    height: 150px;
-    background: url("../images/cards/back.png") no-repeat center center / cover;
-    border-radius: 10px;
-    border: 1px solid white;
+    border: 1px solid red;
 }
 
+.firstWar {
+    position: absolute; 
+    left: 5px; 
+    top: 0px; 
+    font-size: 24px; 
+    text-align: center; 
+    color: red;
+}
+.secondWar {
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    transform: scale(1,-1);
+    font-size: 24px;
+    color: red;
+}
+.centerWar{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-size: 80px;
+    font-family: 'Oleo Script', cursive;
+}

@@ -86,10 +86,40 @@ function randomFlip(elem){
 
     let res1 = document.body.querySelector('#p1').dataset.result;
     let res2 = document.body.querySelector('#p2').dataset.result;
+    // let res1 = 5;
+    // let res2 = 5;
     let listClass = 'class="list-group-item list-group-item-danger mb-2"';
     let redText = `style="color: red; font-weight:bold;"`;
-    let evevLeftCard = `<div class="evenLeftCard1"></div><div class="evenLeftCard2"></div><div class="evenLeftCard3"></div>`;
-    let evevRightCard = `<div class="evenRightCard1"></div><div class="evenRightCard2"></div><div class="evenRightCard3"></div>`;
+
+    let evevLeftCard1 = `<div class="evenCard1"></div>`;
+    let evevLeftCard2 = `<div class="evenCard2"></div>`;
+    let evevLeftCard3 = `<div class="evenCard3"></div>`;
+    let warCardLeft =  `<div class="warCard">
+                            <div class="firstWar">
+                                <img id="warSuitCard0" src="images/cards/club.png" alt="" width="15px;">
+                            </div>
+                            <div id="warScoreP1" class="centerWar">
+                                <img src="images/cards/4.png" width="50px">
+                            </div>
+                            <div class="secondWar">             
+                                <img id="warSuitCard1" src="images/cards/club.png" alt="" width="15px;">
+                            </div>
+                        </div>`;
+
+    let evevRightCard1 = `<div class="evenCard1"></div>`;
+    let evevRightCard2 = `<div class="evenCard2"></div>`;
+    let evevRightCard3 = `<div class="evenCard3"></div>`;
+    let warCardRight = `<div class="warCard">
+                            <div class="firstWar">
+                                <img id="warSuitCard2" src="images/cards/club.png" alt="" width="15px;">
+                            </div>
+                            <div id="warScoreP2" class="centerWar">
+                                <img src="images/cards/5.png" width="50px">
+                            </div>
+                            <div class="secondWar">             
+                                <img id="warSuitCard3" src="images/cards/club.png" alt="" width="15px;">
+                            </div>
+                        </div>`;
 
     if (res1 === '' || res2 === '') {
         document.body.querySelector('#gameResult').innerHTML = "GAME IN PROGRESS";
@@ -107,15 +137,30 @@ function randomFlip(elem){
             roundNumber++;
             document.body.querySelector('#gameResult').innerHTML = "EVEN";
             document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} = <span ${redText}>EVEN</span></li>`;
-            document.body.querySelector('#firstEven').innerHTML = evevLeftCard;
-            document.body.querySelector('#secondEven').innerHTML = evevRightCard;
+            document.body.querySelector('#firstEven').innerHTML += evevLeftCard1;
+            document.body.querySelector('#secondEven').innerHTML += evevRightCard1;
+            setTimeout(function(){ 
+                document.body.querySelector('#firstEven').innerHTML += evevLeftCard2;
+                document.body.querySelector('#secondEven').innerHTML += evevRightCard2;
+             }, 1000);
+             setTimeout(function(){ 
+                document.body.querySelector('#firstEven').innerHTML += evevLeftCard3;
+                document.body.querySelector('#secondEven').innerHTML += evevRightCard3;
+             }, 2000);
+             setTimeout(function(){ 
+                document.body.querySelector('#firstEven').innerHTML += warCardLeft;
+                document.body.querySelector('#secondEven').innerHTML += warCardRight;
+                randomise("#warScoreP1");
+                randomise("#warScoreP2");
+                // HERE THE REST OF THE CODE
+             }, 3000);
+             
         }
     }  
 }
 
 
 function reset() {
-    
     document.body.querySelector('#btnPlayer1').disabled = false;
     document.body.querySelector('#btnPlayer2').disabled = false; 
     document.body.querySelector('#btnPlayer1').style.backgroundColor = "";
@@ -131,4 +176,39 @@ function reset() {
     document.body.querySelector('#suitcardChange3').src = '';
     document.body.querySelector('#vegasDeck').innerHTML = '';
     document.body.querySelector('#renoDeck').innerHTML = '';
+    document.body.querySelector('#firstEven').innerHTML = '';
+    document.body.querySelector('#secondEven').innerHTML = '';
+}
+
+function randomise(elemId) {
+    let randomise = Math.floor(Math.random() * (14 - 2 + 1) + 2);
+        if (randomise === 11) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/jack.png" width="50px" />`;
+        } else if (randomise === 12) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/queen.png" width="50px" />`;
+        } else if (randomise === 13) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/king.png" width="50px" />`;
+        } else if (randomise === 14) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/ace.png" width="50px" />`;
+        } else if (randomise === 2) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/2.png" width="50px" />`;
+        } else if (randomise === 3) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/3.png" width="50px" />`;
+        } else if (randomise === 4) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/4.png" width="50px" />`;
+        } else if (randomise === 5) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/5.png" width="50px" />`;
+        } else if (randomise === 6) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/6.png" width="50px" />`;
+        } else if (randomise === 7) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/7.png" width="50px" />`;
+        } else if (randomise === 8) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/8.png" width="50px" />`;
+        } else if (randomise === 9) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/9.png" width="50px" />`;
+        } else if (randomise === 10) {
+            document.body.querySelector(elemId).innerHTML = `<img src="images/cards/10.png" width="50px" />`;
+        } else {
+            document.body.querySelector(elemId).innerHTML = '';
+        }
 }

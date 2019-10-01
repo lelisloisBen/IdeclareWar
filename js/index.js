@@ -154,8 +154,29 @@ function randomFlip(elem){
                 document.body.querySelector('#firstEven').innerHTML += warCardLeft;
                 document.body.querySelector('#secondEven').innerHTML += warCardRight;
                 randomise("#warScoreP1");
+                console.log(randomRes);
+                document.body.querySelector('#p1').dataset.even = randomRes;
                 randomise("#warScoreP2");
+                console.log(randomRes);
+                document.body.querySelector('#p2').dataset.even = randomRes;
                 document.body.querySelector('#resetBtn').disabled = false;
+                let p1Numb = document.body.querySelector('#p1').dataset.even;
+                let p2Numb = document.body.querySelector('#p2').dataset.even;
+                let warRound = 0;
+                if (Number(p1Numb) === Number(p2Numb)) {
+                    document.body.querySelector('#gameResult').innerHTML = "WAR EVEN - NO WINNER";
+                    warRound++;
+                    document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>WAR NUMBER: ${warRound} = <span ${redText}>WAR EVEN</span></li>`;
+                } if (Number(p1Numb) > Number(p2Numb)) {
+                    document.body.querySelector('#gameResult').innerHTML = "PLAYER 1 WON THE WAR";
+                    warRound++;
+                    document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>WAR NUMBER: ${warRound} = <span ${redText}>PLAYER 1 WON THE WAR</span></li>`;
+                } if (Number(p1Numb) < Number(p2Numb)) {
+                    document.body.querySelector('#gameResult').innerHTML = "PLAYER 2 WON THE WAR";
+                    warRound++;
+                    document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>WAR NUMBER: ${warRound} = <span ${redText}>PLAYER 2 WON THE WAR</span></li>`;
+                }
+                
                 // HERE THE REST OF THE CODE
              }, 3000);
              
@@ -186,8 +207,11 @@ function reset() {
     document.body.querySelector('#warDeclared').innerHTML = '';
 }
 
+let randomRes;
+
 function randomise(elemId) {
     let randomise = Math.floor(Math.random() * (14 - 2 + 1) + 2);
+        randomRes = randomise;
         if (randomise === 11) {
             document.body.querySelector(elemId).innerHTML = `<img src="images/cards/jack.png" width="50px" />`;
         } else if (randomise === 12) {

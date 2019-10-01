@@ -116,3 +116,12 @@ body {
     font-size: 80px;
     font-family: 'Oleo Script', cursive;
 }
+.declareWar {
+    border-radius: 10px;
+    z-index: 100;
+    padding: 20px;
+    width: 80%;
+    position: absolute;
+    top: 150px;
+    text-align: center;
+}

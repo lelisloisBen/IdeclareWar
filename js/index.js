@@ -134,6 +134,9 @@ function randomFlip(elem){
             document.body.querySelector('#gameResult').innerHTML = "PLAYER 2 WIN";
             document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} = <span ${redText}>PLAYER 2 WON</span></li>`;
         } else if (Number(res1) === Number(res2)) {
+            document.body.querySelector('#warDeclared').className = "declareWar";
+            document.body.querySelector('#warDeclared').innerHTML = "<img src='images/cards/war.png' />";
+            document.body.querySelector('#resetBtn').disabled = true;
             roundNumber++;
             document.body.querySelector('#gameResult').innerHTML = "EVEN";
             document.body.querySelector('#rounds').innerHTML += `<li ${listClass}>ROUND: ${roundNumber} = <span ${redText}>EVEN</span></li>`;
@@ -152,6 +155,7 @@ function randomFlip(elem){
                 document.body.querySelector('#secondEven').innerHTML += warCardRight;
                 randomise("#warScoreP1");
                 randomise("#warScoreP2");
+                document.body.querySelector('#resetBtn').disabled = false;
                 // HERE THE REST OF THE CODE
              }, 3000);
              
@@ -178,6 +182,8 @@ function reset() {
     document.body.querySelector('#renoDeck').innerHTML = '';
     document.body.querySelector('#firstEven').innerHTML = '';
     document.body.querySelector('#secondEven').innerHTML = '';
+    document.body.querySelector('#warDeclared').className = '';
+    document.body.querySelector('#warDeclared').innerHTML = '';
 }
 
 function randomise(elemId) {

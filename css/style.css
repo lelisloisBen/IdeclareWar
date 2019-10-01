@@ -48,7 +48,12 @@ body {
     background: none!important;
     background-color: white!important;
     border: 1px solid #AD2D20;
-    transform: rotateY(360deg);
+    /* transform: rotateY(360deg); */
+    /* transform: rotate3d(1, 1, 1, 45deg); */
+    /* transform: rotate3d(2, -1, -1, -0.2turn); */
+    /* transform: rotate3d(0, 1, 0.5, 3.142rad); */
+    transform: rotate3d(1, 1, 1, 360deg);
+    
 }
 
 .evenCard1 {
